@@ -338,6 +338,11 @@ template {
   display: none;
 }
 
+.header, .box {
+  display: flex;
+  justify-content: center;
+}
+
 form,
 fieldset {
   margin: 0;
@@ -406,8 +411,8 @@ html {
 
 body {
   color: #000;
-  background: #fff;
-  font: 16px/1.2 "Rubik", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+  background: #3a454d;
+  font: 16px/1.5 Roboto, sans-serif;
   min-width: 320px;
 }
 
@@ -424,7 +429,7 @@ p, ul, ol {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   margin: 0 0 0.5em;
-  font-weight: bold;
+  font-weight: 300;
 }
 
 h1 {
@@ -452,12 +457,12 @@ h6 {
 }
 
 a {
-  color: #007bff;
+  color: #1976d2;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .grid {
@@ -664,66 +669,102 @@ a:hover {
     width: 100%;
   }
 }
-.btn {
-  transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
-  display: inline-block;
-  vertical-align: middle;
-  padding: 10px 20px;
-  border-radius: 3px;
-  text-align: center;
-  border: none;
-}
-.btn:hover {
+.more-btn {
+  background-color: transparent;
+  color: #fff;
+  padding: 15px 10px;
   text-decoration: none;
-  outline: none;
+  width: 150px;
+  border: solid 2px #fff;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin: 20px 0;
+  transition: background-color 0.3s, color 0.3s;
 }
-.btn.btn-primary {
-  background-color: #007bff;
-  color: #fff;
+.more-btn:hover {
+  background-color: #fff;
+  color: #4e5a62;
 }
-.btn.btn-primary:hover {
-  background-color: #0069d9;
-}
-.btn.btn-secondary {
-  background-color: #28a745;
-  color: #fff;
-}
-.btn.btn-secondary:hover {
-  background-color: #218838;
-}
-.btn.btn-outline-primary {
-  background-color: transparent;
-  border: 2px solid #007bff;
-  color: #007bff;
-}
-.btn.btn-outline-primary:hover {
-  background-color: #0069d9;
-  border-color: #0069d9;
-  color: #fff;
-}
-.btn.btn-outline-secondary {
-  background-color: transparent;
-  border: 2px solid #28a745;
-  color: #28a745;
-}
-.btn.btn-outline-secondary:hover {
-  background-color: #218838;
-  border-color: #218838;
-  color: #fff;
-}
-.btn.btn-block {
-  display: block;
+
+.card {
   width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+.card p {
+  font-weight: 700;
+  background-color: #292f36;
+  color: #fff;
+  margin: 0;
+  padding: 17px 20px;
+  text-transform: uppercase;
+}
+.card .hover-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  text-decoration: none;
+}
+.card .plus {
+  flex-grow: 1;
+  position: relative;
+}
+.card .plus::after, .card .plus::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+}
+.card .plus::before {
+  width: 20px;
+  height: 3px;
+}
+.card .plus::after {
+  width: 3px;
+  height: 20px;
+}
+.card:hover .hover-box {
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
-  body {
-    background-color: #ff0;
+  body .row {
+    flex-wrap: nowrap;
+    display: flex;
+    padding: 0 15px;
+    justify-content: space-between;
+  }
+  body .col {
+    width: 33%;
+    padding: 0 10px;
+  }
+  body .card {
+    display: flex;
+  }
+  body .header {
+    display: block;
   }
 }
 @media (min-width: 1024px) {
-  body {
-    background-color: tomato;
+  body .header h1 {
+    padding-left: 20px;
+    border-bottom: none;
+    border-left: solid 10px #4e5a62;
   }
 }
 
@@ -738,45 +779,12 @@ a:hover {
   padding: 0 15px;
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-control {
-  display: block;
-  width: 100%;
-  padding: 10px 15px;
-}
-
-.form-control::-webkit-input-placeholder {
-  color: #f00;
-}
-.form-control::-moz-placeholder {
-  opacity: 1;
-  color: #f00;
-}
-.form-control:-moz-placeholder {
-  color: #f00;
-}
-.form-control:-ms-input-placeholder {
-  color: #f00;
-}
-.form-control.placeholder {
-  color: #f00;
-}
-.form-control:focus {
-  border-color: #ff0;
-}
-
-.grid img {
-  display: block;
-  width: 100%;
+.box {
+  flex-wrap: wrap;
 }
 
 .header {
   padding: 30px 15px;
-  justify-content: center;
-  display: flex;
 }
 .header h1 {
   display: inline-flex;

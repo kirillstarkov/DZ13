@@ -1,30 +1,29 @@
 // Переменные цветов
-
+$header-border: #4e5a62;
+$dark-gray: #292f36;
+$link-color: #1976d2;
+$bgc: #3a454d;
+$hover-boxbgc: rgba(0,0,0,.5);
 $gray: #999;
-$blue: #007bff;
-$dark-blue: #0069d9;
-$green: #28a745;
-$dark-green: #218838;
-$red: #f00;
-$yellow: #ff0;
+$transbtn: background-color .3s, color .3s;
 
 $black: #000;
 $white: #fff;
 
-$base-font-sans-serif: 'Rubik', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+$base-font-sans-serif: Roboto, sans-serif;
 $base-font-serif: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
 
 // Основной размер и цвет текста, семейство шрифта и цвет фона
 $base-text-color: $black;
-$base-background-color: $white !default;
+$base-background-color: $bgc !default;
 $font-size-base: 16px !default;
-$line-height-base: 1.2 !default;
+$line-height-base: 1.5 !default;
 $base-font-family: $base-font-sans-serif !default;
 
 $base-min-width: 320px;
 
 // Цвет глобальной ссылки
-$base-link-color: $blue;
+$base-link-color: $link-color;
 
 // Формы
 $form-element-border-color: $gray;

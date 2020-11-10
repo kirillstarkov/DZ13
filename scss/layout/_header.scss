@@ -1,12 +1,11 @@
 .header {
     padding: 30px 15px;
-    justify-content: center;
-    display: flex;
+    @extend %flexcenter;
     
     h1 {
         display: inline-flex;
         text-transform: uppercase;
-        border-bottom: solid 4px #4e5a62;
-        color: #fff;
+        border-bottom: solid 4px $header-border;
+        color: $white;
     }
 }

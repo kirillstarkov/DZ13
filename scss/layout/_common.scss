@@ -1,11 +1,35 @@
 // пример использования media (breakpoints в верху файла)
 body {
 	@include media ('>=tablet') {
-		background-color: #ff0;
+		.row {
+		flex-wrap: nowrap;
+		display: flex;
+		padding: 0 15px;
+		justify-content: space-between;
+		}
+
+		.col {
+			width: 33%;
+			padding: 0 10px;
+		}
+
+		.card {
+			display: flex;
+		}
+
+		.header {
+			display: block;
+		}
 	}
 
 	@include media ('>=desktop') {
-		background-color: tomato;
+		.header {
+			h1 {
+				padding-left: 20px;
+				border-bottom: none;
+				border-left: solid 10px $header-border;
+			}
+		}
 	}
 }
 
@@ -20,35 +44,7 @@ body {
 	padding: 0 15px;
 }
 
-
-
-// Обертка для полей формы
-
-.form-group {
-	margin-bottom: 15px;
-}
-
-// Поля формы
-
-.form-control {
-	display: block;
-	width: 100%;
-	padding: 10px 15px;
-}
-
-.form-control {
-	@include placeholder {
-		color: $red;
-	}
-
-	&:focus {
-		border-color: $yellow;
-	}
-}
-
-.grid {
-	img {
-		display: block;
-		width: 100%;
-	}
+.box {
+	@extend %flexcenter;
+	flex-wrap: wrap;
 }
