@@ -753,19 +753,6 @@ a:hover {
     width: 33%;
     padding: 0 10px;
   }
-  body .card {
-    display: flex;
-  }
-  body .header {
-    display: block;
-  }
-}
-@media (min-width: 1024px) {
-  body .header h1 {
-    padding-left: 20px;
-    border-bottom: none;
-    border-left: solid 10px #4e5a62;
-  }
 }
 
 .wrapper {
@@ -791,4 +778,16 @@ a:hover {
   text-transform: uppercase;
   border-bottom: solid 4px #4e5a62;
   color: #fff;
+}
+@media (min-width: 768px) {
+  .header {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .header h1 {
+    padding-left: 20px;
+    border-bottom: none;
+    border-left: solid 10px #4e5a62;
+  }
 }

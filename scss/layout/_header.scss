@@ -8,4 +8,18 @@
         border-bottom: solid 4px $header-border;
         color: $white;
     }
+
+	@include media ('>=tablet') { 
+				display: block;
+	    }
+
+    @include media ('>=desktop') {
+			h1 {
+				padding-left: 20px;
+				border-bottom: none;
+				border-left: solid 10px $header-border;
+			}
+		}
+
+
 }
