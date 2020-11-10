@@ -9,10 +9,6 @@
         color: $white;
     }
 
-	@include media ('>=tablet') { 
-				display: block;
-	    }
-
     @include media ('>=desktop') {
 			h1 {
 				padding-left: 20px;
@@ -20,6 +16,12 @@
 				border-left: solid 10px $header-border;
 			}
 		}
+
+	@include media ('>=tablet') { 
+				display: block;
+	    }
+
+    
 
 
 }
